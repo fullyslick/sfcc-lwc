@@ -5,10 +5,12 @@ export default class App extends LightningElement {
   category = 'Mountain';
   material = 'Steel';
   price = '$2,700';
-  pictureUrl = 'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg';
+  pictureUrl =
+    'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg';
   ready = false;
 
   // Callback when component is rendered
+  /* eslint-disable @lwc/lwc/no-async-operation */
   connectedCallback() {
     setTimeout(() => {
       this.ready = true;
