@@ -1,7 +1,10 @@
 <template>
   <!-- Use hello world component
    You need to transform folder name: 'helloWorld' to '<c-hello-world>' -->
-  <c-hello-world></c-hello-world>
+  <!-- Passing property declared in app.js Component to child helloWorld
+       More info of property syntax: 
+       https://developer.salesforce.com/docs/platform/lwc/guide/js-props-names.html-->
+  <c-hello-world product-name={name}></c-hello-world>
   <!-- Conditional display logic -->
   <template lwc:if={ready}>
     <div id="display">
