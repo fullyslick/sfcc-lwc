@@ -10,6 +10,8 @@ export default class Detail extends LightningElement {
 
   // Use set and get to process the value every time it's
   // requested while switching between products
+  // How to use getters and setters:
+  // https://developer.salesforce.com/docs/platform/lwc/guide/js-props-getters-setters.html
   set productId(value) {
     this._productId = value;
     this.product = bikes.find((bike) => bike.fields.Id.value === value);
