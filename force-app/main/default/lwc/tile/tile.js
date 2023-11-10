@@ -1,6 +1,9 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Tile extends LightningElement {
+  // Check parent list.html, this where 'product' property is passed
+  // With @api decorator you make it available to the tile component
+  // https://developer.salesforce.com/docs/platform/lwc/guide/create-components-data-binding.html
   @api product;
 
   // 2. Handle click event
