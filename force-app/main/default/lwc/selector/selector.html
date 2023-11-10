@@ -1,11 +1,9 @@
 <template>
   <div class="wrapper">
-    <header class="header">Select a Bike</header>
+    <header class="header">Available Bikes for {name} {userId}</header>
     <section class="content">
       <div class="columns">
         <main class="main">
-          <!-- 9. Assign event handler in the parent of list to detect the custom 'productselect' 
-            event from child 'list.html'-->
           <c-list onproductselected={handleProductSelected}></c-list>
         </main>
         <aside class="sidebar-second">
