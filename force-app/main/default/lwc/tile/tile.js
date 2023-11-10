@@ -7,6 +7,8 @@ export default class Tile extends LightningElement {
   @api product;
 
   // 2. Handle click event
+  // Event bubbling in LWC and how to configure it
+  // https://developer.salesforce.com/blogs/2021/08/how-events-bubble-in-lightning-web-components
   tileClick() {
     // 3. Create new custom event and pass data to it
     const event = new CustomEvent('tileclick', {
