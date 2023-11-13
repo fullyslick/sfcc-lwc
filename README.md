@@ -36,3 +36,9 @@ These are the parameters you used in the command.
 ```sh
 sf project deploy start
 ```
+
+- Start local server (requires installation of https://www.npmjs.com/package/@salesforce/lwc-dev-server)
+
+```sh
+sfdx force:lightning:lwc:start
+```
