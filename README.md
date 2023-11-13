@@ -16,3 +16,19 @@ The `sfdx-project.json` file contains useful configuration information for your 
 - [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
 - [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
 - [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+## SFDX VS Code CLI Commands
+
+- Create a Lightning Web Component
+
+```sh
+sf lightning generate component -n myFirstWebComponent -d force-app/main/default/lwc --type lwc
+```
+
+These are the parameters you used in the command.
+
+    -n — This defines the name of the Lightning web component folder and its files.
+    -d — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
+    --type — This specifies that you want to create a Lightning Web Component.
+
+-
