@@ -31,4 +31,8 @@ These are the parameters you used in the command.
     -d — This defines the target directory where the Lightning web component should be created. The target directory must be named lwc
     --type — This specifies that you want to create a Lightning Web Component.
 
--
+- Deploy component:
+
+```sh
+sf project deploy start
+```
