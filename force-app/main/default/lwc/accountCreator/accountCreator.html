@@ -1,0 +1,18 @@
+<template>
+  <!-- <lightning-card>
+    This is special out of the box component 
+    to quickly create forms to add, view, or update a record in SFCC
+    We get all of the security and performance benefits that Lightning Data Service provide,
+    by using this component. Note that it is not very flexible and covers only some basic usages.
+    object-api-name:  property indicates the kind of object to load
+    fields: property indicates the fields to show in the form 
+    handleSuccess: as the handler for the success event.-->
+  <lightning-card>
+    <lightning-record-form
+      object-api-name={objectApiName}
+      fields={fields}
+      onsuccess={handleSuccess}
+    >
+    </lightning-record-form>
+  </lightning-card>
+</template>
