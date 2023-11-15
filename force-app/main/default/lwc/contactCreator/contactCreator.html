@@ -1,25 +1,8 @@
 <template>
-  <form onsubmit={handleSubmit}>
-    <label for="firstName">First Name:</label>
-    <br />
-    <input
-      type="text"
-      required
-      id="firstName"
-      onchange={handleFirstNameChange}
-    />
-    <br />
-    <br />
-    <label for="lastName">Last Name:</label>
-    <br />
-    <input type="text" required id="lastName" onchange={handleLastNameChange} />
-    <br />
-    <br />
-    <label for="email">Email:</label>
-    <br />
-    <input type="email" required id="email" onchange={handleEmailChange} />
-    <br />
-    <br />
-    <button type="submit">Add Contact</button>
-  </form>
+  <lightning-record-form
+    object-api-name={objectApiName}
+    fields={fields}
+    onsuccess={handleSuccess}
+  >
+  </lightning-record-form>
 </template>
