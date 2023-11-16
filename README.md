@@ -57,6 +57,10 @@ Helps creating lwc - projects, component, deployment, etc
 
 - **SFDX: Create Project**
 - **SFDX: Create Lightning Web Component**
+- **SFDX: Create Apex Class**
+
+1. Create Apex Class - right click on `force-app/main/default` folder and click **SFDX: Create Apex Class**
+
 - **SFDX: Authorize an Org**
 
 1. In Visual Studio Code, open the Command Palette by pressing Ctrl+Shift+P (Windows) or Cmd+Shift+P (macOS).
