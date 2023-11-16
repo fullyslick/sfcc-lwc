@@ -72,6 +72,21 @@ Helps creating lwc - projects, component, deployment, etc
 
 Creates localhost to test components locally before deploying. However some components may not work properly, because more context is required (record page for example). Localhost can get or set data from and to Salesforce Developer Experience Environment.
 
+[Set Up LWC Local Development](https://developer.salesforce.com/tools/vscode/en/localdev/set-up-lwc-local-dev)
+[Documentation](https://developer.salesforce.com/tools/vscode/en/localdev/lwclocaldev)
+
+Requires:
+
+- [node-gyp](https://github.com/nodejs/node-gyp)
+- Python
+- VSCode Build Tools
+
+Run Local Server Command:
+
+```sh
+sfdx force:lightning:lwc:start
+```
+
 ## LWC Concepts
 
 - Basic Syntax - HTML Template, JS Props and Methods - [Hello World](https://github.com/fullyslick/sfcc-lwc/commit/0ca5afe1d6c6ce9e6856e191357a2b2fb9beeadd)
