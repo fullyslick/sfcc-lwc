@@ -1,0 +1,11 @@
+<template>
+  <lightning-card>
+    <button onclick={handleButtonClick}>Get Accounts Data</button>
+    <template if:true={accounts}>
+      <!-- View the component on the Developer Experience Environment - Working With Data page  -->
+      <!-- https://developer.salesforce.com/docs/component-library/bundle/lightning-datatable/documentation -->
+      <lightning-datatable key-field="Id" data={accounts} columns={columns}>
+      </lightning-datatable>
+    </template>
+  </lightning-card>
+</template>
