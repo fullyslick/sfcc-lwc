@@ -2,6 +2,8 @@ import { LightningElement, wire } from 'lwc';
 
 import getContacts from '@salesforce/apex/ContactController.getContacts';
 
+import { reduceErrors } from 'c/ldsUtils';
+
 import CONTACT_EMAIL_FIELD from '@salesforce/schema/Contact.Email';
 import CONTACT_FIRST_NAME_FIELD from '@salesforce/schema/Contact.FirstName';
 import CONTACT_LAST_NAME_FIELD from '@salesforce/schema/Contact.LastName';
@@ -29,4 +31,8 @@ export default class ContactList extends LightningElement {
 
   @wire(getContacts)
   contacts;
+
+  get errors() {
+    return this.contacts.error ? reduceErrors(this.contacts.error) : [];
+  }
 }

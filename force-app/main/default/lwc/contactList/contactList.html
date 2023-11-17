@@ -1,5 +1,7 @@
 <template>
   <lightning-card>
+    <!-- Render the error if it exists -->
+    <p if:true={errors}>{errors}</p>
     <template if:true={contacts.data}>
       <lightning-datatable
         key-field="Id"
