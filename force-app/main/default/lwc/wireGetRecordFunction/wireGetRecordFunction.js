@@ -1,10 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 
-import { reduceErrors } from 'c/ldsUtils';
-
-import { getFieldValue } from 'lightning/uiRecordApi';
-
-import getAccounts from '@salesforce/apex/AccountController.getAccounts';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
 
@@ -21,8 +17,7 @@ export default class WireGetRecord extends LightningElement {
   // When using @wire decorator on a function,
   // the function will be invoked whenever the LDS adapter detects update of data.
   // The decorated function will have access to obtained data or error
-  // Change to getAccounts to simulate error
-  @wire(getAccounts, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
+  @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
   wiredAccount({ data, error }) {
     console.log('Execute logic each time a new value is provisioned');
     // Make data available to this component
@@ -31,8 +26,8 @@ export default class WireGetRecord extends LightningElement {
       this.error = undefined;
       // Or make error info available to this component
     } else if (error) {
-      // Display the error, by assign it to a property
-      this.error = reduceErrors(error);
+      this.error = error;
+      this.data = undefined;
     }
   }
 
