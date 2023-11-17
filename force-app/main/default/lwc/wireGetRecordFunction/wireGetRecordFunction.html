@@ -1,1 +1,5 @@
-<template> Account Name: {name} </template>
+<template
+  ><h1>Account Name: {name}</h1>
+  <!-- Render the error if it exists -->
+  <p if:true={error}>{error}</p>
+</template>
