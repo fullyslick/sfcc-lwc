@@ -1,5 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 
+import { reduceErrors } from 'c/ldsUtils';
+
 import NAME_FIELD from '@salesforce/schema/Account.Name';
 import REVENUE_FIELD from '@salesforce/schema/Account.AnnualRevenue';
 import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
@@ -28,4 +30,11 @@ export default class AccountList extends LightningElement {
   // If it fails, the error surfaces in accounts.error
   @wire(getAccounts)
   accounts;
+
+  // Add 'errors' property and extract error
+  // Every time this.accounts.error changes,
+  // the getter updates the value of the errors property. This occurs because of reactivity.
+  get errors() {
+    return this.accounts.error ? reduceErrors(this.accounts.error) : [];
+  }
 }

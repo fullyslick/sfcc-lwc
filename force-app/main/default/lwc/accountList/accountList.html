@@ -10,5 +10,7 @@
       >
       </lightning-datatable>
     </template>
+    <!-- Render the error if it exists -->
+    <p if:true={errors}>{errors}</p>
   </lightning-card>
 </template>
