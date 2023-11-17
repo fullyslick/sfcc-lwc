@@ -1,5 +1,7 @@
 import { LightningElement } from 'lwc';
 
+import { reduceErrors } from 'c/ldsUtils';
+
 import NAME_FIELD from '@salesforce/schema/Account.Name';
 import REVENUE_FIELD from '@salesforce/schema/Account.AnnualRevenue';
 import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
@@ -26,6 +28,9 @@ export default class AccountList extends LightningElement {
   // We assign the data obtained from Apex method call to this property
   accounts;
 
+  // Property to display error
+  error;
+
   handleButtonClick() {
     // Call Apex function on click. It returns a promise resolved with the data or rejected with error
     getAccounts()
@@ -34,8 +39,8 @@ export default class AccountList extends LightningElement {
         this.accounts = accounts;
       })
       .catch((error) => {
-        //code to execute if accounts are not returned successfully
-        console.log(error);
+        // If Apex method fails, extract the error and assign it to error property to display it on UI
+        this.error = reduceErrors(error);
       });
   }
 }
