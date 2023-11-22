@@ -43,6 +43,55 @@ sf project deploy start
 sfdx force:lightning:lwc:start
 ```
 
+- Install **@salesforce/sfdx-lwc-jest** to perform unit testing of LWC with Jest.
+  If you receive an error “No matching version found for prettier-plugin-apex@^1.10.1”, update the package.json file devDependencies prettier-plugin-apex to ^1.10.0.
+
+  ```sh
+    sf force lightning lwc test setup
+  ```
+
+  Alternativly you can install like this:
+
+  ```sh
+  npm install @salesforce/sfdx-lwc-jest --save-dev
+  ```
+
+- Run Jest Unit Tests
+  In the Visual Studio Code terminal enter the command bellow. If you run it in the top level directory it will run all unit tests for all components. Navigate to a component folder or pass a component folder location, to run a unit test only for a specific component.
+
+  ```sh
+  npm run test:unit
+  ```
+
+  or
+
+  ```sh
+  node node_modules/@salesforce/sfdx-lwc-jest/bin/sfdx-lwc-jest
+  ```
+
+  Run Jest Unit Tests in watch mode:
+
+  ```sh
+  npm run test:unit:watch
+  ```
+
+  - Run Jest Unit Tests and show the tested files:
+
+  ```sh
+  npm run test:unit:coverage
+  ```
+
+  If you get an <span style="color: red">“Invalid sourceApiVersion”</span> error it is due to an updated VS Code Extension with the latest Salesforce release.
+  error Invalid sourceApiVersion found in sfdx-project.json. Expected 51.0, found 52.0
+  In Visual Studio Code, in the top-level directory, open **sfdx-project.json**.
+  Update the line of code with “sourceApiVersion” to the Expected version from the error message you received.
+
+  ```json
+  "sourceApiVersion": "51.0"
+  ```
+
+- [Debugging Jest Unit Tests](https://developer.salesforce.com/docs/platform/lwc/guide/unit-testing-using-jest-debug-tests.html)
+
 # Summary
 
 ## Set Up Your Salesforce Developer Experience Environment
