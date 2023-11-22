@@ -8,5 +8,5 @@ package.xml
 **/jsconfig.json
 **/.eslintrc.json
 
-# LWC Jest
+# LWC Jest - this excludes the deplpoying of unit tests to an Organisation
 **/__tests__/**
