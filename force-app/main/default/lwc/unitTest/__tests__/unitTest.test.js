@@ -34,4 +34,27 @@ describe('c-unit-test', () => {
     // Asserting the text is correct
     expect(div.textContent).toBe('Unit 5 alive!');
   });
+
+  // When the state of a Lightning web component changes, the DOM updates asynchronously.
+  // To ensure that your test waits for updates to complete before evaluating the result, return a resolved Promise.
+  it('displays unit status with updated unitNumber', () => {
+    const element = createElement('c-unit-test', {
+      is: UnitTest
+    });
+    // Add the element to the jsdom instance
+    document.body.appendChild(element);
+
+    // Update unitNumber after element is appended
+    // Here we are updating the state, in the test above the unitNumber was 5
+    element.unitNumber = 6;
+
+    const div = element.shadowRoot.querySelector('div');
+
+    // Return a promise to wait for any asynchronous DOM updates. Jest
+    // will automatically wait for the Promise chain to complete before
+    // ending the test and fail the test if the promise rejects.
+    return Promise.resolve().then(() => {
+      expect(div.textContent).toBe('Unit 6 alive!');
+    });
+  });
 });
