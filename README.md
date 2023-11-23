@@ -170,3 +170,5 @@ sfdx force:lightning:lwc:start
 - [Testing @wire Service - using the Generic Wire Adapter](https://github.com/fullyslick/sfcc-lwc/commit/205b8aabb7721b64caa49d6c3b8fc5a55b1f6a55)
 - [Testing @wire Service - using the Lightning Data Service Wire Adapter](https://github.com/fullyslick/sfcc-lwc/commit/660841ff2c1bd19ace4bb6da900813c072af4008)
 - [Testing @wire Service - using Apex Wire Adapter Simulation](https://github.com/fullyslick/sfcc-lwc/commit/21aeac672d901e8a52628cc52b76591bd3387e94)
+- [Test Base Component - Mocking (Override) Base Components Stubs](https://github.com/fullyslick/sfcc-lwc/commit/5fce200a406c3765ed246ada98fd6d24bc1a29ec)
+- [Test Components From Other Namespace - Mocking Other Namespace Components](https://github.com/fullyslick/sfcc-lwc/commit/a78af37d6bff21ff5fda1a56bdc09c8e8d47a6b9)
